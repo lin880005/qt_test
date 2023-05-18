@@ -56,9 +56,6 @@ class Ui_Dialog(object):
         self.comboBox = QtWidgets.QComboBox(Dialog)
         self.comboBox.setGeometry(QtCore.QRect(340, 10, 110, 40))
         self.comboBox.setObjectName("comboBox")
-        self.hello1 = QtWidgets.QPushButton(Dialog)
-        self.hello1.setGeometry(QtCore.QRect(160, 280, 110, 40))
-        self.hello1.setObjectName("hello1")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -73,7 +70,6 @@ class Ui_Dialog(object):
         self.radioButton_3.setText(_translate("Dialog", "*"))
         self.radioButton_4.setText(_translate("Dialog", "/"))
         self.checkBox.setText(_translate("Dialog", "CheckBox"))
-        self.hello1.setText(_translate("Dialog", "hello"))
 
 
 if __name__ == "__main__":
