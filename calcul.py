@@ -23,6 +23,8 @@ def click():
             ui.label.setText("答案是 : "+str(radio_click(x,y)))
         elif  ui.comboBox.currentIndex() == 1:
             ui.label.setText("ans is :{} ".format(str(radio_click(x,y))))
+        else:
+            ui.label.setText("ans is:{} ".format(str(radio_click(x,y))))
     else: 
         message = QMessageBox()
         message.setWindowTitle("ERROR")
@@ -50,6 +52,7 @@ def radio_click(x,y):
     elif ui.radioButton_4.isChecked():
         z = float(x)/float(y)
         return z
+    
 
 def chang(i):
     pass
@@ -71,7 +74,7 @@ ui.radioButton.clicked.connect(click)
 ui.radioButton_2.clicked.connect(click)
 ui.radioButton_3.clicked.connect(click)
 ui.radioButton_4.clicked.connect(click)
-ui.comboBox.addItems(["中文","英文"])
+ui.comboBox.addItems(["中文","English"])
 ui.comboBox.activated.connect(chang)
 
 
