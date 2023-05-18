@@ -28,8 +28,11 @@ class Main_window(QtWidgets.QMainWindow):
         self.ui.progressBar.setMinimum(0)
         self.ui.horizontalSlider.setMaximum(100)
         self.ui.horizontalSlider.setMinimum(0)
+        self.ui.horizontalSlider_2.setMaximum(100)
+        self.ui.horizontalSlider_2.setMinimum(0)
         self.ui.horizontalSlider.valueChanged.connect(self.slider_change)
-        self.ui.horizontalSlider.sliderReleased.connect(self.slider_release)
+        self.ui.horizontalSlider_2.valueChanged.connect(self.slider_change1)
+        #self.ui.horizontalSlider.sliderReleased.connect(self.slider_release)
         self.ui.progressBar.setValue(0)
         
     def isfloat(self,num):
@@ -83,13 +86,17 @@ class Main_window(QtWidgets.QMainWindow):
     def slider_change(self):
         self.num = self.ui.horizontalSlider.value()
         self.ui.progressBar.setValue(self.num)
-        self.ui.pic.setGeometry(QtCore.QRect(int(80-int(self.num/2)), int(50-(self.num/2)), int(100+(self.num*2)), int(100+(self.num*2))))
+       
     
-    def slider_release(self):
+    def slider_change1(self):
+        self.num1 = self.ui.horizontalSlider_2.value()
+        self.ui.pic.setGeometry(QtCore.QRect(int(80-int(self.num1)), int(50-(self.num1)), int(100+(self.num1*4)), int(100+(self.num1*4))))
+    
+    """def slider_release(self):
         message = QtWidgets.QMessageBox()
         message.setWindowTitle("surprice")
         message.setInformativeText("你選擇的是!! "+str(self.ui.horizontalSlider.value()))
-        message.exec_()
+        message.exec_()"""
         
 if __name__ == "__main__" :
     app = QtWidgets.QApplication(sys.argv)
